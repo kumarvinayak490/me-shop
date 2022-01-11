@@ -1,0 +1,34 @@
+ <article class="order-item">
+
+    <div class="order-content">
+        <h3>$<%= order.productData.totalPrice.toFixed(2) %> - <span class="date"><%= order.formattedDate %> </span></h3>
+
+        <%if (locals.isAdmin){%>
+        <h4><%= order.userData.name %> </h4>
+        <%}%>
+         <ul>
+            <% for ( let item of order.productData.items ) {%>
+                <div class="item-list">
+                    <li class="order-product-title"> <%= item.product.title %> - $<%= item.totalPrice.toFixed(2) %>  ($<%= item.product.price.toFixed(2) %> x <%= item.quantity %>)  </li>
+                </div>
+                <%}%>
+         </ul>
+         <%if (locals.isAuth){%>
+            <form class="order-status-action" data-orderId="<%= order.orderId %> ">
+                <select class="order-status-option" name="status" id="status">
+                    <option value="Pending" <% if (order.status.toLowerCase()==='pending'){%>selected<%}%>> Pending</option>
+                    <option value="Fulfilled" <% if (order.status.toLowerCase()==='fulfilled'){%>selected<%}%>>Fulfilled</option>
+                    <option value="Cancelled"<% if (order.status.toLowerCase()==='cancelled'){%>selected<%}%> >Cancelled</option>
+                </select>
+                <button class="order-status-btn"> Update</button>
+            </form>
+
+            <%}%>
+     </div>
+
+     <div >
+
+        <h3 class="order-status"> <%= order.status %> </h1>
+
+     </div>
+        </article>

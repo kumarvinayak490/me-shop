@@ -1,0 +1,27 @@
+<header>
+    <%- include('./nav') %> 
+
+    <% if (locals.isAdmin) {%>
+
+        <%- include('../products/products',{products:products}) %> 
+
+
+        <%} else {%>
+            
+        <section class="base-section">
+
+        <div class="img-container">
+            <img src="/images/img3.jpg" alt="" class="img">
+    </div>
+    <div class="img-container">
+            <img src="/images/img2.jpg" alt="" class="img">
+            <div class="header-info">
+                <h1>Explore our winter collection</h1>
+                <a href="" class="btn" >Shop Now</a>
+            </div>
+    </div>
+    </section>
+
+    <%}%>
+
+</header>

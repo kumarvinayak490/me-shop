@@ -1,0 +1,24 @@
+{
+  "name": "meshop",
+  "version": "1.0.0",
+  "description": "This is a practice project to test my skills ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Vinayak Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.2.2",
+    "multer": "^1.4.4",
+    "uuid": "^8.3.2"
+  }
+}

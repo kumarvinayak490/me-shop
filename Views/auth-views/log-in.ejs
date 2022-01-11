@@ -1,0 +1,43 @@
+<%- include('../include/head') %> 
+<link rel="stylesheet" href="/static/css/log-in.css">
+
+</head>
+
+<body>
+
+    <section id="login-section" style="padding-top:1rem;padding-left: 1rem;">
+
+      <a href="/" class="btn">Back to home</a>
+
+        <div class="log-in-icon">
+            <h2>Hello!</h2>
+            <hr>
+            <i class="fas fa-users"></i>
+        </div>
+        <form  class="form" action="/sign-in" method="POST">
+
+            <h4>Log-in</h4>
+      
+    <div class="form-row">
+        <label class="form-label" for="login-name">Email</label>
+        <input class="form-input" type="email" id="login-email" name="email" required/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-input" type="password" id="login-password" name="password" required/>
+      </div>
+      <div class="log-in-btn">
+  <button id="login-btn"class="btn btn-block">Login</button>
+  </div>
+   <div class="form-row center Tmargin">
+             <p>Don't have an account?  <span><a href="/sign-up"> Sign Up</a></span></p>
+        </div>
+  </form>
+
+
+</section>
+    
+
+
+
+<%- include('../include/footer') %> 

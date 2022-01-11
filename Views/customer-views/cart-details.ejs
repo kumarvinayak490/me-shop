@@ -1,0 +1,55 @@
+<%- include('../include/head') %> 
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/cart.css">
+<script src="/static/javascript/cart-management.js" defer></script>
+
+</head>
+
+<body>
+
+    <%- include('../include/nav') %> 
+
+    <section class="cart-section">
+
+        <% if(locals.cart.items.length==0){%>
+
+            <h1>You have no items in cart. Please add items</h1>
+
+            <%} else {%>
+
+
+        <div class="cart-heading-content">
+             <h1>Shopping Cart</h1>
+             <p>Price</p>
+        </div>
+       
+        <hr class="Bmargin">
+
+        <% for (let cartItem of locals.cart.items){%>
+
+            <%- include('../include/cart-item',{cartItem:cartItem}) %> 
+
+            <%}%>
+
+            <hr class="Tmargin">
+
+            <div class="cart-total">
+
+                <h2> Grand Total : <span class="grand-total" id="grand-total"> <%= locals.cart.totalPrice.toFixed(2) %> </span> </h2>
+
+                <% if (locals.isAuth){%>
+                <form action="/orders" method="POST">
+                    <button class="btn">Proceed to checkout</button>
+                </form>
+                <%} else {%>
+                    <h3>Please <a class="btn" href="/log-in">Login</a> to continue</h3>
+                    <%}%>
+            </div>
+
+        <%}%>
+
+    </section>
+
+   
+
+<%- include('../include/footer') %>

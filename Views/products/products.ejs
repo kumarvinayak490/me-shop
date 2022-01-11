@@ -1,0 +1,11 @@
+<section class="products-section">
+
+<%for (let product of products){%>
+
+    <article class="product-item">
+        <%- include('./product-item',{product:product}) %> 
+    </article>
+
+    <%}%>
+
+</section>

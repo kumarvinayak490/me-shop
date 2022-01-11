@@ -1,0 +1,24 @@
+<%- include('../include/head') %> 
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/orders.css">
+<script src="/static/javascript/order-management.js" defer></script>
+
+</head>
+
+<body>
+
+    <%- include('../include/nav') %> 
+
+    <h1 class="section-title">Your Orders</h1>
+
+    <section class="orders-section">
+
+      <% for (let order of orders) {%>
+
+       <%- include('./order-item',{order:order}) %> 
+
+       <%}%>
+
+    </section>
+
+    <%- include('../include/footer') %>

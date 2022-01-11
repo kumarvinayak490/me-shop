@@ -1,0 +1,55 @@
+<nav class="nav-bar">
+
+    <h1 class="nav-logo">Me<span class="span-logo">Shop</span>  </h1>
+
+    <ul class="nav-links">
+
+        <li class="nav-link">
+            <a href="/"> <i class="fas fa-home"></i>  Home</a>
+        </li>
+
+        <% if (!locals.isAdmin){%>
+
+            <li class="nav-link">
+            <a href="/cart/products"> <i class="fas fa-shopping-cart"></i> Cart <span id="cart-quantity"><%= locals.cart.totalQuantity %> </span></a>
+            </li>
+
+             <li class="nav-link">
+            <a href="/products"> <i class="fas fa-bag"></i> <i class="fas fa-shopping-basket"></i> Shop</a>
+            </li>
+
+            <%}%>
+
+        <%if (!locals.isAuth){%>
+            
+        <li class="nav-link">
+            <a href="/sign-up">Register <i class="fas fa-user-plus"></i>  </a>
+        </li>
+        <li class="nav-link">
+            <a href="/log-in">Log-in <i class="fas fa-sign-in-alt"></i></a>
+        </li>
+
+        <%}%>
+
+            <% if (locals.isAdmin){%>
+
+            <li class="nav-link">
+            <a href="/admin/add-product">Add a product</a>
+            </li>
+            <li class="nav-link">
+            <a href="/admin/orders">Manage Orders</a>
+            </li>
+
+            <%}%>    
+
+            <% if (locals.isAuth){%>
+
+                <li class="nav-link">
+            <form action="/logout" method="POST">
+            <button class="logout-btn"> <i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+            </li>
+
+            <%}%>
+    </ul>
+</nav>

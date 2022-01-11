@@ -1,0 +1,47 @@
+#login-section{
+    background: #00d2ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height:100vh;
+ position:relative;
+
+}
+
+.log-in-icon{
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom:5rem;
+   
+}
+
+.log-in-icon i{
+    font-size: 5rem;
+    color:var(--clr-grey-2);
+    width:8rem;
+    height:5rem;
+    position: absolute;
+   top:20%;
+   left:50%;
+   transform:translateX(-50%);
+   background:var(--clr-primary-8);
+   border-radius: 50%;
+   padding:.5rem;
+}
+
+.log-in-icon h2{
+    font-size:3rem;
+}
+
+.log-in-icon hr{
+    width:10rem;
+    margin: 1rem auto;
+    background-color: var(--clr-grey-10);
+}
+
+.log-in-btn{
+    text-align: center;
+}
+
+.form h4{
+    margin-top: 2rem;
+}

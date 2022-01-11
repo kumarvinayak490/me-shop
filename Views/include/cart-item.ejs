@@ -1,0 +1,25 @@
+<div class="cart-details">
+
+            <div class="cart-item-img-container">
+                <img class="img cart-img" src="<%= cartItem.product.imageURL %>  " alt="image">
+            </div>
+
+            <div class="update-cart-qty">
+                <h1 class="cart-item-title"><%= cartItem.product.title %> </h1>
+                <label for="qty" class="cart-label">Qty:</label>
+                <input class="cart-input" type="number" id="qty" value="<%= cartItem.quantity %>">
+                <button id="cart-btn"class="btn cart-btn" data-pid="<%= cartItem.product._id %>">Update</button>
+
+            
+            </div>
+
+            <div class="cart-item-content">
+
+                
+
+                <h2>$<span id="item-total"><%= cartItem.totalPrice.toFixed(2) %> </span></h2>
+               
+
+            </div>
+
+        </div>

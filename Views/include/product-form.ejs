@@ -1,0 +1,39 @@
+ <form  class="form add-product-form" action="/admin<%= actionURL %> " method="POST" enctype="multipart/form-data">
+
+            <h4><%= action %> </h4>
+      
+    <div class="form-row">
+        <label class="form-label" for="title">Title</label>
+        <input class="form-input" type="text" id="title" name="title" value="<%= product.title %> " required/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="price">Price</label>
+        <input class="form-input" type="number" id="price" name="price" value="<%= product.price %>" required/>
+      </div>
+
+
+       <div class="image-upload-control">
+
+      <div class="form-row">
+        <label class="form-label" for="image">Image</label>
+            <input class="form-input" type="file" title="hello" id="image" name="image" accept="image/png,image/jpg,image/jpeg" />
+      </div>
+
+      <div class="upload-img-container">
+            img
+        </div>
+      </div>
+
+
+
+      <div class="form-row">
+        <label class="form-label" for="summary">Summary</label>
+        <input class="form-input" type="text" id="summary" name="summary" value="<%= product.summary %> "required/>
+      
+      </div>
+
+
+      <div class="log-in-btn center">
+  <button id="login-btn"class="btn btn-block">Submit</button>
+  </div>
+  </form>
